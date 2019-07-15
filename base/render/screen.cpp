@@ -19,4 +19,13 @@ std::shared_ptr<sf::RenderWindow> Screen::createWindow() const
     std::shared_ptr<sf::RenderWindow> window(new sf::RenderWindow(sf::VideoMode(this->width, this->height), this->title));
     return window;
 }
+void Screen::checkIfClosed(std::shared_ptr<sf::RenderWindow> window) const
+{
+    sf::Event event;
+        while (window->pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window->close();
+        }
+}
 } // namespace Game

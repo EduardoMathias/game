@@ -14,7 +14,7 @@ public:
     std::shared_ptr<sf::RenderWindow> createWindow() const;
     void render() const;
     void renderText(const float x, const float y, std::string text) const;
-
+    void checkIfClosed(std::shared_ptr<sf::RenderWindow> window) const;
 protected:
     int width;
     int height;
